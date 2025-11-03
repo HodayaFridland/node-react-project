@@ -5,7 +5,7 @@ const jwt=require("jsonwebtoken")
 const register = async (req, res) => {
     const { username, password, name, email, phone,roles } = req.body
     if (!name || !username || !password) {
-        return res.status(400).json({ message: 'All fields are required' })
+        return res.status(400).json({ message: 'All fields aree required' })
     }
     const duplicate = await User.findOne({ username: username }).lean()
 
