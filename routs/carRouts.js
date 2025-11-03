@@ -1,0 +1,11 @@
+const express=require("express")
+const router=express.Router()
+const carController=require("../controllers/carController")
+const verifyJWT=require("../middleware/verifyJWT")
+router.use(verifyJWT)  
+router.get("/get-cars",carController.getAllCars)
+router.post("/add-car",carController.addNewCar)
+router.get("/get-car/:id",carController.getCarById)
+router.put("/update-car",carController.updateCar)
+router.delete("/delete-car/:id",carController.deleteCar)
+module.exports=router
